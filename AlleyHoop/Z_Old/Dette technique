@@ -1,0 +1,27 @@
+﻿Dette technique
+
+
+Inscription
+  + Check que le login n'est pas déjà prix
+  + Ajout champ date
+  + Ajout e-mail
+  + Ajout confirmation par e-mail
+  + Placement du texte en pourcentage d'espace et pas en px
+  + Vérifier que le pseudo n'a pas déjà été pris par quelqu'un d'autre
+  + Vérifier que les champs ne sont pas vides
+  + Mettre un capcha ?
+  + Passer les champs en requirend (hors celui de la ville)
+  + Ne pas permettre de reprendre le nom d'un équipe existante
+
+Menu 
+  + Le mettre sur la plupart des pages via un include ?
+  + Ajouter une entrée match
+
+Main 
+  + Faire que l'affichage conditionnel de la page de connexion foncionne
+
+Création de joueur :
+  + Ne pas laisser la possibilité de créer un joueur avec le même nom et prénom qu'un joueur actif déjà existant
+
+BDD :
+  + REvoir les champs qui actuellement peuvent être nuls
