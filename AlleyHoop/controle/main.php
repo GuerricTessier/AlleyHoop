@@ -29,7 +29,7 @@
             {
             $_SESSION['connecter'] = 1;
             echo $_SESSION['connecter'];
-            header('Location: main.php'); // Redirection a réaliser
+            header('Location: inscription.php'); // Redirection a réaliser
             exit();
             }
         }
