@@ -1,14 +1,3 @@
-<?php
-    session_start(); 
-
-    // On s'amuse à créer quelques variables de session dans $_SESSION
-    $_SESSION['pseudo'] = 'Pseudo';
-    $_SESSION['pass'] = 'Mot de passe';
-    $_SESSION['connecter'] = 0;
-?>
-
-
-<!-- # Page de connection --> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,7 +11,8 @@
         <p>Alley Hoop - Le Site de jeu de basketball</p>
     </header>
 
-    <!-- Ici le menu positionné en latéral droit --> 
+
+    <!-- Ici le menu positionné en latéral gauche --> 
     <nav id = "menu">    
         <p>
             <strong>Menu</strong>
@@ -37,14 +27,27 @@
     </nav>
 
 
+        <nav id = "joueurs">    
+        <p>
+            <strong>Joueurs</strong>
+        </p> 
+        <ul>
+            <li><a href="main.php>">Joueur 1</a></li>             <!-- # Ne fonctionne pas -->  
+            <li><a href="monequipe.php">Joueur 2</a></li>      <!-- # Page à construire -->  
+            <li><a href="media.php">Joueur 3</a></li>           <!-- # Page à construire --> 
+            <li><a href="transfert.php">Joueur 4</a></li>       <!-- # Page à construire -->  
+            <li><a href="finance.php">Joueur 5</a></li>           <!-- # Page à construire -->  
+        </ul>
+    </nav>
+
+
+
+
+
     <!-- Ici le pied de page du site --> 
     <footer>
         <a href="pied">A propos de Alley Hoop</a>
     </footer>
 
+
 </html>
-
-
-
-            
-     
