@@ -1,14 +1,4 @@
-<?php
-    session_start(); 
-
-    // On s'amuse à créer quelques variables de session dans $_SESSION
-    $_SESSION['pseudo'] = 'Pseudo';
-    $_SESSION['pass'] = 'Mot de passe';
-    $_SESSION['connecter'] = 0;
-?>
-
-
-<!-- # Page de connection --> 
+<!-- # Page de main --> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -44,6 +34,40 @@
 
 </html>
 
+
+<?php
+   if (isset($_POST['pseudo']))  
+       {try // Tentative d'accéder à la base de données
+            {
+                $bdd = new PDO('mysql:host=localhost;dbname=alleyhoop;charset=utf8', 'root', '');
+            }
+            catch(Exception $e)
+            {
+                die('Erreur : '.$e->getMessage());
+            }
+
+        // Identifier l'IdEquipe de l'utilisateur
+        $IdEquipe = $bdd->prepare('SELECT Id FROM equipe WHERE IdUser = ?');
+        $IdEquipe -> execute (array($IdUser[0]));   // il s'agit du Iduser récupérer lors de la connection
+
+
+        // Identifier les joueurs de l'utilisateurs
+        /*$Joueurs = $bdd->prepare('SELECT * FROM joueurs WHERE IdEquipe = ?'); 
+        $Joueurs-> execute (array(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass'])));
+        while ($donnees = $requete->fetch())
+            {
+            $nbLignes = $nbLignes +1;         
+            }
+
+        if ($nbLignes > 0)
+            {
+            $_SESSION['connecter'] = 1;
+            echo $_SESSION['connecter'];
+            header('Location: main.php'); // Redirection a réaliser
+            exit();
+            }
+        }*/
+?>
 
 
             

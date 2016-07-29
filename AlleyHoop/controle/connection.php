@@ -17,19 +17,26 @@
             }
 
         // Vérification Login et MdP en base
-        $requete = $bdd->prepare('SELECT * FROM users WHERE Pseudo = ? and MotDePasse = ?'); 
+        $requete = $bdd->prepare('SELECT Id FROM users WHERE Pseudo = ? and MotDePasse = ?'); 
         $requete-> execute (array(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass'])));
         $nbLignes = 0;
-        while ($donnees = $requete->fetch())
+        while ($IdUser = $requete->fetch())
             {
+            echo $IdUser[$nbLignes];   
             $nbLignes = $nbLignes +1;         
             }
 
         if ($nbLignes > 0)
             {
             $_SESSION['connecter'] = 1;
+            echo $nbLignes;
             echo $_SESSION['connecter'];
-            header('Location: main.php'); // Redirection a réaliser
+            echo $IdUser[0];
+            echo $IdUser[1];
+            echo $IdUser;
+            echo ("FCK");
+            //echo $_SESSION['connecter'];
+            //header('Location: main.php');
             exit();
             }
         }
