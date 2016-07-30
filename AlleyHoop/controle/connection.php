@@ -5,6 +5,7 @@
     $_SESSION['pseudo'] = 'Pseudo';
     $_SESSION['pass'] = 'Mot de passe';
     $_SESSION['connecter'] = 0;
+    $_SESSION['IdUser'] = 0;
 
    if (isset($_POST['pseudo']))  
        {try // Tentative d'accéder à la base de données
@@ -17,30 +18,27 @@
             }
 
         // Vérification Login et MdP en base
-        $requete = $bdd->prepare('SELECT Id FROM users WHERE Pseudo = ? and MotDePasse = ?'); 
+        $requete = $bdd->prepare('SELECT * FROM users WHERE Pseudo = ? and MotDePasse = ?'); 
         $requete-> execute (array(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass'])));
         $nbLignes = 0;
-        while ($IdUser = $requete->fetch())
+        while ($TabUsers = $requete->fetch())
             {
-            echo $IdUser[$nbLignes];   
+            // On renseigne les variables des sessions liées à l'utilisateurs
+            $_SESSION['IdUser'] = $TabUsers[0];
+            $_SESSION['pseudo'] =  $TabUsers[1];
+            $_SESSION['pass'] = $TabUsers[2];
+
             $nbLignes = $nbLignes +1;         
             }
 
         if ($nbLignes > 0)
             {
-            $_SESSION['connecter'] = 1;
-            echo $nbLignes;
-            echo $_SESSION['connecter'];
-            echo $IdUser[0];
-            echo $IdUser[1];
-            echo $IdUser;
-            echo ("FCK");
-            //echo $_SESSION['connecter'];
-            //header('Location: main.php');
+            $_SESSION['connecter'] = 1; // Normalement c'est pas nécessaire de noter qu'il s'est bien loggué mis on ne sait jamais
+            header('Location: main.php');
             exit();
             }
         }
-                ?>
+?>
 
 
 <!-- # Page de connection --> 
