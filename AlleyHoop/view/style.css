@@ -48,6 +48,41 @@ footer
         a:active {color: red;}
 }
 
+/* CSS pour placement nom équipe dans page Main */
+#equipe
+{
+    width: 13%;
+    padding-left: 5px;
+    position: absolute;
+        left: 7%;
+        top: 14%;
+    font-size: large;
+    font-weight: bold;
+    color : Orange;
+}
+
+#joueurs
+{
+    width: 40%;
+    position: absolute;
+        left: 30%;
+        top: 14%;
+    font-size: large;
+    font-weight: bold;
+    color : Orange;
+}
+
+/* CSS pour placement menu principal */
+#menu
+{
+    width: 13%;
+    border: 1px solid black;
+    padding-left: 5px;
+    position: absolute;
+        left: 7%;
+        top: 45%;
+}
+
 
 /* CSS pour page de connextion */
 
