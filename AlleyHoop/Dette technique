@@ -3,3 +3,5 @@
 
 Connection :
   + Changer la couleur des liens
+  + Faire message si 3 codes faux d'affilé
+  + Killer la connexion à la BDD une fois que plus besoin
