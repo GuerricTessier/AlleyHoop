@@ -67,40 +67,59 @@
         <p>Alley Hoop - Le Site de jeu de basketball</p>
     </header>
 
-    <!-- Ici le nom de l'équipe --> 
-    <nav id = "equipe">
-        <p>
-            <strong><?php echo $_SESSION['NomEquipe']; ?></strong>
-        </p>
-    </nav>
+    <body>
+            <!-- Ici le nom de l'équipe --> 
+        <nav id = "equipe">
+            <p>
+                <strong><?php echo $_SESSION['NomEquipe']; ?></strong>
+            </p>
 
-    <!-- Ici la liste des noms des joueurs avec affichage conditionnel avec PHP --> 
-    <nav id = "joueurs">
-        <p>
-            <p>Vos joueurs</p>
-            <!-- Boucle PHP pour afficher la liste des joueurs en s'adaptant au nombre de joueurs de l'équipe --> 
-            <?php
-                for ($boucle = 0; $boucle < $nbJoueursEquipe; $boucle++)
-                    {
-                    echo "<a href='a.php>'>$NomJoueur[$boucle]<br></a>";  
-                    }
-            ?>
-        </p>
-    </nav>
 
-    <!-- Ici le menu positionné en latéral gauche --> 
-    <nav id = "menu">    
-        <p>
-            <strong>Menu</strong>
-        </p> 
-        <ul>
-            <li><a href="main.php>">Accueil</a></li>
-            <li><a href="monequipe.php">Mon équipe</a></li>      <!-- # Page à construire -->  
-            <li><a href="media.php">La presse</a></li>           <!-- # Page à construire --> 
-            <li><a href="transfert.php">Transfert</a></li>       <!-- # Page à construire -->  
-            <li><a href="finance.php">Finance</a></li>           <!-- # Page à construire -->  
-        </ul>
-    </nav>
+        </nav>
+
+        <!-- Ici la liste des noms des joueurs avec affichage conditionnel avec PHP --> 
+        <nav id = "joueurs">
+            <p>
+                <p>Vos joueurs</p>
+                <!-- Boucle PHP pour afficher la liste des joueurs en s'adaptant au nombre de joueurs de l'équipe --> 
+                <?php
+                    for ($boucle = 0; $boucle < $nbJoueursEquipe; $boucle++)
+                        {
+                        echo "<a href='a.php>'>$NomJoueur[$boucle]<br></a>";  
+                        }
+                ?>
+                
+                <div id="madiv"></div>
+                <script type="text/javascript" scr = "../controle/joueurs.js">
+                  //madiv=document.getElementById('madiv');
+                  //madiv.innerHTML = "Hello";
+                </script>
+
+
+
+            </p>
+        </nav>
+
+        <!-- Ici le menu positionné en latéral gauche --> 
+        <nav id = "menu">    
+            <p>
+                <strong>Menu</strong>
+            </p> 
+            <ul>
+                <li><a href="main.php>">Accueil</a></li>
+                <li><a href="monequipe.php">Mon équipe</a></li>      <!-- # Page à construire -->
+                <li><a href="match.php">Les matchs</a></li>      <!-- # Page à construire -->         
+                <li><a href="media.php">La presse</a></li>           <!-- # Page à construire --> 
+                <li><a href="transfert.php">Transfert</a></li>       <!-- # Page à construire -->  
+                <li><a href="finance.php">Finance</a></li>           <!-- # Page à construire -->  
+            </ul>
+        </nav>
+
+        <!-- JS --> 
+        <!-- Récupération du fichier des fonctions JS --> 
+        <script src="JS\joueurs.js"></script>
+
+    </body>
 
     <!-- Ici le pied de page du site --> 
     <footer>
