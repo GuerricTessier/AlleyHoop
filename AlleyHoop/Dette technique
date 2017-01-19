@@ -1,7 +1,9 @@
 ﻿Dette technique
 
-
-Connection :
+Connexion / Inscription :
   + Changer la couleur des liens
-  + Faire message si 3 codes faux d'affilé
   + Killer la connexion à la BDD une fois que plus besoin
+  + Ajouter une colonne actif pour les users
+  + Demander un e-mail aux users
+  + Mettre le message "Mot de passe invalide" en dessous ou à coté de là où les codes sont saisis
+  + Repositionner le message confirmant que l'inscription a bien été prise en compte à un meilleur endroit
