@@ -1,25 +1,4 @@
 <?php
-    class Joueur
-        {
-            private $pseudo;
-            private $email;
-            private $signature;
-            private $actif;
-            
-            public function getPseudo()
-            {
-                return $this->pseudo;
-            }
-            
-            public function setPseudo($nouveauPseudo)
-            {
-                $this->pseudo = $nouveauPseudo;
-            }
-        }
-?>
-
-
-<?php
     class PersonnagesManager
     {
         private $_db; // Instance de PDO
